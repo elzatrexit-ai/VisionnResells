@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1:1 Rep Sneaker | VisionnResells</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>VisionnResells</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="product-detail-grid">
+    <div class="product-image">
+      <img src="images/Jordan4.JPEG" alt=" Authentic Jordan 4 Yellow thunders">
+    </div>
+    <div class="product-info">
+      <h2> Authentic Jordan 4 Yellow Thunders Barely Used</h2>
+      <p class="price">$175 AUD</p>
+      <p>Jordan 4 Yellow Thunders. Comfortable, stylish, and perfect for collectors.</p>
+
+      <label for="size">Select Size:</label>
+      <select id="size">
+        <option value="US 5">US 5</option>
+        <option value="US 6OUT OF STOCK">US 6 OUT OF STOCK</option>
+        <option value="US 7 OUT OF STOCK">US 7 OUT OF STOCK</option>
+        <option value="US 8 OUT OF STOCK">US 8 OUT OF STOCK</option>
+        <option value="US 9 OUT OF STOCK">US 9 OUT OF STOCK</option>
+        <option value="US 10 OUT OF STOCK">US 10 OUT OF STOCK</option>
+      </select>
+
+      <button id="buyButton">Buy Now</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 VisionnResells</p>
+  </div>
+</footer>
+
+<script>
+const stripe = Stripe('pk_test_51SyP3HPPTRhKJy30CvU7lH078LZ89LFwd9IjB4cczVF0A1h5DMn8FzdWUKyc3Lbvx15Wj8ox2a3K0gLQGZ0WprZM00JIqzTpdk');
+document.getElementById('buyButton').addEventListener('click', async () => {
+  const size = document.getElementById('size').value;
+  const response = await fetch('/create-checkout-session', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({product:'Authentic Jordan 4 Yellow Thunders Barely Used', price:175, size:size})
+  });
+  const session = await response.json();
+  stripe.redirectToCheckout({sessionId:session.id});
+});
+</script>
+
+</body>
+</html>

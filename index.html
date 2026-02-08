@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VisionnResells</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <h1>VisionnResells</h1>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero">
+  <div class="container">
+    <h2>1:1 Reps & Authentic Products</h2>
+    <p>High-quality sneakers, apparel, electronics, and accessories. Shop confidently with VisionnResells.</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </div>
+</section>
+
+<!-- Categories Tabs -->
+<section id="products" class="container">
+  <h2>Shop by Category</h2>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showCategory('electronics')">Electronics</button>
+    <button class="tab-btn" onclick="showCategory('shirts')">Shirts</button>
+    <button class="tab-btn" onclick="showCategory('pants')">Pants</button>
+    <button class="tab-btn" onclick="showCategory('jackets')">Jackets</button>
+    <button class="tab-btn" onclick="showCategory('shoes')">Shoes</button>
+    <button class="tab-btn" onclick="showCategory('accessories')">Accessories</button>
+  </div>
+
+  <!-- Electronics -->
+  <div id="electronics" class="products-grid category active">
+    <div class="product-card">
+      <a href="product1.html">
+        <img src="https://via.placeholder.com/400x400?text=Smartphone" alt="">
+        <h3>Air pods
+         COMING SOON</h3>
+        <p>$0</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Shirts -->
+  <div id="shirts" class="products-grid category">
+    <div class="product-card">
+      <a href="product2.html">
+        <img src="https://via.placeholder.com/400x400?text=1:1+Rep+Shirt" alt="OUT OF STOCK">
+        <h3>EMPTY</h3>
+        <p>$0</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Empty categories for now -->
+  <div id="pants" class="products-grid category"></div>
+  <div id="shoes" class="products-grid category">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <a href="shoe1.html">
+      <img src="images/Jordan4.JPEG"Authentic Jordan 4 Yellow Thunders Barely used">
+      <div class="product-info">
+        <h3>Authentic Jordan 4 Yellow Thunders Barely used</h3>
+        <p>$175 AUD</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <a href="shoe2.html">
+      <img src="images/sneaker2.jpg" alt="OUT OF STOCK">
+      <div class="product-info">
+        <h3>Empty</h3>
+        <p>$0</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product-card">
+    <a href="shoe3.html">
+      <img src="images/sneaker3.jpg" alt="OUT OF STOCK">
+      <div class="product-info">
+        <h3>Empty</h3>
+        <p>$0</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+  
+  
+
+  <div id="accessories" class="products-grid category"></div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container">
+<h2>About VisionnResells</h2>
+<p>We specialize in providing the highest quality 1:1 replicas and authentic products. Every item is verified for authenticity and quality.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container">
+<h2>Contact</h2>
+<p>Email us at <a href="mailto:visionnresells@example.com">visionnresells@example.com</a></p>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<p>© 2026 VisionnResells</p>
+</div>
+</footer>
+
+<script>
+// Tab switching
+function showCategory(category) {
+  const tabs = document.querySelectorAll('.category');
+  tabs.forEach(tab => tab.classList.remove('active'));
+  document.getElementById(category).classList.add('active');
+
+  const btns = document.querySelectorAll('.tab-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
+</script>
+
+</body>
+</html>

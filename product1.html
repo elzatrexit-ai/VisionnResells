@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1:1 Rep Sneaker | VisionnResells</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <h1>VisionnResells</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#description">Description</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="product-detail">
+    <div class="product-detail-grid">
+      
+      <!-- Product Image -->
+      <div class="product-image">
+        <img src="https://via.placeholder.com/500x500?text=1:1+Rep+Sneaker" alt="1:1 Rep Sneaker">
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info">
+        <h2>1:1 Rep Sneaker</h2>
+        <p class="price">$120</p>
+        <p id="description">
+          High-quality 1:1 replica sneaker. Comfortable, stylish, and perfect for collectors.  
+          Crafted to look exactly like the original with premium materials.
+        </p>
+
+        <!-- Size Selector -->
+        <label for="size">Select Size:</label>
+        <select id="size">
+          <option value="US 6">US 6</option>
+          <option value="US 7">US 7</option>
+          <option value="US 8">US 8</option>
+          <option value="US 9">US 9</option>
+          <option value="US 10">US 10</option>
+        </select>
+
+        <!-- Buy Now Button -->
+        <button id="buyButton">Buy Now</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2026 VisionnResells</p>
+  </div>
+</footer>
+
+<script>
+// Stripe Checkout
+const stripe = Stripe('pk_test_51SyP3HPPTRhKJy30CvU7lH078LZ89LFwd9IjB4cczVF0A1h5DMn8FzdWUKyc3Lbvx15Wj8ox2a3K0gLQGZ0WprZM00JIqzTpdk');
+
+document.getElementById('buyButton').addEventListener('click', async () => {
+  const size = document.getElementById('size').value;
+
+  const response = await fetch('/create-checkout-session', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      product: '1:1 Rep Sneaker',
+      price: 120,
+      size: size
+    })
+  });
+
+  const session = await response.json();
+  stripe.redirectToCheckout({ sessionId: session.id });
+});
+</script>
+
+</body>
+</html>

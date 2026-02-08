@@ -1,0 +1,129 @@
+/* Reset & Body */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Montserrat', sans-serif; background:#fff; color:#111; line-height:1.6;
+  background-image: url('https://www.transparenttextures.com/patterns/topography.png'); /* subtle white pattern */
+}
+
+/* Container */
+.container { width:90%; max-width:1200px; margin:auto; }
+
+/* Header */
+header { background:#000; color:#fff; padding:20px 0; position:sticky; top:0; z-index:10; }
+header h1 { display:inline-block; font-family:'Playfair Display', serif; font-size:32px; font-weight:700; }
+header nav { float:right; margin-top:5px; }
+header nav a { color:#fff; text-decoration:none; margin-left:25px; font-weight:500; transition:0.3s; }
+header nav a:hover { color:#ddd; }
+
+/* Hero */
+#hero { background:#f9f9f9; padding:100px 20px; text-align:center; }
+#hero h2 { font-family:'Playfair Display', serif; font-size:44px; margin-bottom:20px; }
+#hero p { font-size:20px; margin-bottom:30px; max-width:600px; margin-left:auto;margin-right:auto;}
+.btn { background:#000; color:#fff; text-decoration:none; padding:14px 36px; font-weight:600; border-radius:5px; transition:0.3s; }
+.btn:hover { background:#333; }
+
+/* Tabs */
+.tabs { display:flex; justify-content:center; flex-wrap:wrap; margin:30px 0; }
+.tab-btn { background:#fff; border:2px solid #000; padding:12px 18px; margin:5px; cursor:pointer; font-weight:600; transition:0.3s; border-radius:8px;}
+.tab-btn.active, .tab-btn:hover { background:#000; color:#fff; }
+
+/* Products Grid */
+.products-grid { 
+  display: none; 
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); 
+  gap:25px; 
+  margin-top:20px;
+}
+.products-grid.active { display:grid; }
+
+/* Product Card */
+.product-card { 
+  background:#fff; 
+  border:1px solid #ddd; 
+  border-radius:15px; 
+  overflow:hidden; 
+  text-align:center; 
+  transition: transform 0.3s, box-shadow 0.3s; 
+  display:flex; 
+  flex-direction: column; 
+}
+
+.product-card img { 
+  width:100%; 
+  aspect-ratio: 1/1; /* makes image square */ 
+  object-fit:cover; 
+  border-bottom:1px solid #ddd;
+}
+
+.product-info { 
+  padding:10px; 
+  flex-grow:1; 
+  display:flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+}
+
+.product-info h3 { 
+  font-family:'Playfair Display', serif; 
+  font-weight:700; 
+  font-size:16px; 
+  margin:5px 0; 
+}
+
+.product-info p { 
+  font-weight:bold; 
+  color:#000; 
+  margin:0; 
+  font-size:14px;
+}
+
+.product-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+}
+
+.product-card a { 
+  color:#111; 
+  text-decoration:none; 
+  display:flex; 
+  flex-direction: column; 
+  height:100%;
+}
+
+/* About & Contact */
+#about, #contact { text-align:center; padding:80px 0; font-size:18px; max-width:800px; margin:auto; }
+#contact a { color:#000; font-weight:700; text-decoration:none; }
+#contact a:hover { text-decoration:underline; }
+
+/* Footer */
+footer { background:#000; color:#fff; padding:25px 0; text-align:center; margin-top:50px; font-weight:500; }
+/* Product Detail Page Grid */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  margin: 60px 0;
+  align-items: center;
+}
+
+/* Product Image */
+.product-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  transition: transform 0.4s;
+}
+.product-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Product Info */
+.product-info h2 { font-family: 'Playfair Display', serif; font-size:36px; margin-bottom:15px; }
+.product-info .price { font-weight:700; font-size:28px; margin-bottom:15px; }
+.product-info p { font-size:18px; margin-bottom:25px; }
+.product-info label { font-weight:600; margin-right:10px; }
+.product-info select { padding:8px 12px; border-radius:5px; border:1px solid #111; margin-bottom:20px; }
+.product-info button {
+  background:#000; color:#fff; padding:14px 36px; border:none; border-radius:5px;
+  cursor:pointer; font-weight:700; font-size:16px; transition:0.3s;
+}
+.product-info button:hover { background:#333; }
